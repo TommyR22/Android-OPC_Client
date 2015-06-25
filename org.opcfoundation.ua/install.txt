@@ -1,0 +1,12 @@
+Importing UA Java stack into Eclipse IDE
+
+1. Extract the ZIP contents, for example to your Eclipse workspace folder
+2. Select File-Import...General-Existing Projects into Workspace
+3. Find the directory that you extracted as the Root directory
+  - if you extracted the project out of your workspace, check "Copy to your workspace"
+4. Click Finish
+5. Check the project Build Path (right-click on the project)
+  - it should contain all necessary libraries to build the project
+6. You can now build and run the examples, or start developing your own code.
+
+

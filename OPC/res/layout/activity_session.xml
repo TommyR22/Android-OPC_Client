@@ -1,0 +1,293 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+     android:background="#000">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="50dp"
+        sothree:umanoShadowHeight="4dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="false">
+
+        <!-- MAIN CONTENT -->
+        <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#000">
+            
+			  <LinearLayout
+					    android:id="@+id/LinearLay"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    >
+            
+			                
+			                </LinearLayout>
+			    
+			            <LinearLayout
+					    android:id="@+id/LinearLayout1"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLay"
+					     
+					    >
+			    
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_ns"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="namespace" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_i"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="nodeId" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			            
+			            </LinearLayout>
+			            
+			            <LinearLayout
+					    android:id="@+id/LinearLayout2"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayout1">
+            
+			                <com.beardedhen.androidbootstrap.BootstrapButton
+					    android:id="@+id/browsing"
+					    android:layout_width="150dp"
+					    android:layout_height="wrap_content"
+					    android:text="Browsing"
+					    bootstrapbutton:bb_size="small"
+					    bootstrapbutton:bb_type="primary"
+					    android:layout_centerHorizontal="true"
+					    bootstrapbutton:bb_roundedCorners="true"
+						/>
+			                
+			                <com.beardedhen.androidbootstrap.BootstrapButton
+					    android:id="@+id/variables"
+					    android:layout_width="150dp"
+					    android:layout_height="wrap_content"
+					    android:text="View Variables"
+					    bootstrapbutton:bb_size="small"
+					    bootstrapbutton:bb_type="primary"
+					    android:layout_centerHorizontal="true"
+					    bootstrapbutton:bb_roundedCorners="true"
+						android:layout_marginLeft="20dp"
+						/>
+			                </LinearLayout>
+			                
+			            
+			                       <ScrollView
+			    android:layout_width="match_parent"
+			    android:layout_height="180dp" 
+			    android:layout_below="@id/LinearLayout2"
+			    android:id="@+id/Console"
+			   >
+			    
+			    <TextView
+			        android:id="@+id/testo_session"
+			        android:layout_width="wrap_content"
+			        android:layout_height="180dp"
+			        android:text="" 
+			        android:textColor="#FFFFFF"
+			        />
+			    
+			    </ScrollView>
+			    <ListView 
+        android:layout_below="@+id/Console"
+      android:layout_width="wrap_content"   
+      android:layout_height="fill_parent"   
+      android:id="@+id/listview_subscription"
+      android:listSelector="@drawable/list_selector"
+      >  
+    </ListView>
+        </RelativeLayout>
+
+        <!-- SLIDING LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#546fb4"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="false"
+            android:id="@+id/dragView">
+
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+        			android:gravity="center_horizontal"
+                    android:textColor="#FFFFFF"
+                    android:paddingTop="10dp"
+                    />
+                <com.beardedhen.androidbootstrap.FontAwesomeText
+                    android:id="@+id/icon"
+				    android:layout_width="wrap_content"
+				    android:layout_weight="1"
+				    android:layout_height="wrap_content"
+				    fontawesometext:fa_icon="fa-angle-double-down"
+				    android:gravity="center_horizontal"
+				    android:textSize="20sp"
+				    android:textColor="#FFFFFF"
+				/>
+               
+
+            </LinearLayout>
+           
+               <LinearLayout
+					    android:id="@+id/LinearLayout1"
+					    android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical" 
+					    android:gravity="center_horizontal">
+		
+		                 <com.beardedhen.androidbootstrap.BootstrapButton
+					    android:id="@+id/namespace"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="View Namespace"
+					    bootstrapbutton:bb_size="default"
+					    bootstrapbutton:bb_type="success"
+					    android:layout_centerHorizontal="true"
+					    bootstrapbutton:bb_roundedCorners="true"
+						    android:layout_margin="10dp"/>
+		                 
+		                  <View
+             android:layout_width="fill_parent"
+             android:layout_height="2dp"
+             android:background="#EDEDED"/>
+		
+      			<LinearLayout
+					    android:id="@+id/LinearLayouts1"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					     
+					    >
+			    
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_interval"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Publ. Interval" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_maxkeep"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Max Keep Alive Count" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			            
+			            </LinearLayout>
+			            
+			            <LinearLayout
+					    android:id="@+id/LinearLayouts2"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayouts1">
+			           
+             <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_lifetime"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint=" Requested Lifetime Count" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+             <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_numnotify"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Maximum Number of Notifications" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			                </LinearLayout>
+			                
+			                
+			             <LinearLayout
+					    android:id="@+id/LinearLayouts3"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayouts2">
+			           
+<!--              <com.beardedhen.androidbootstrap.BootstrapEditText -->
+<!-- 			            android:id="@+id/input_lifetime" -->
+<!-- 			            android:layout_width="150dp" -->
+<!-- 			            android:layout_height="wrap_content" -->
+<!-- 			            android:layout_margin="10dp" -->
+<!-- 			            android:hint=" Requested Lifetime Count"  -->
+<!-- 			            bootstrapbutton:be_roundedCorners="true" -->
+<!-- 			            bootstrapbutton:be_state="primary" -->
+<!-- 						/> -->
+			                
+			                <com.beardedhen.androidbootstrap.BootstrapButton
+					    android:id="@+id/buttonSub"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Add Subscription"
+					    bootstrapbutton:bb_size="default"
+					    bootstrapbutton:bb_type="success"
+					    android:layout_centerHorizontal="true"
+					    bootstrapbutton:bb_roundedCorners="true"
+						android:layout_margin="10dp"/>
+			                </LinearLayout>
+			             <View
+             android:layout_width="fill_parent"
+             android:layout_height="2dp"
+             android:background="#EDEDED"/>   
+			             
+			             
+					</LinearLayout>
+           
+            
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+    
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+# Makefile for building the JAVA examples in Unix/Linux/OSX
+
+# ENSURE THE STACK VERSION IS CORRECT!
+UASTACK=Opc.Ua.Stack-1.02.334.9.jar
+
+# Check the file paths, especially for JAVAC and ANT, unless they are on path
+
+JAVAC=javac
+JAVA=java
+ANT=ant
+
+MKDIR=mkdir
+RM=rm -rf
+
+EXAMPLESPATH=examples/org/opcfoundation/ua/examples
+EXAMPLES_SRC=examples/$(EXAMPLESPATH)
+BIN=bin
+BUILD=build
+EXAMPLES_BIN=$(BIN)/$(EXAMPLESPATH)
+EXAMPLES_NS=org/opcfoundation/ua/examples
+
+# Java classpath
+CLASSPATH=examples:lib/$(UASTACK):$(BUILD)/$(UASTACK):lib/log4j-1.2.15.jar:lib/httpcore-4.2.4.jar:lib/httpcore-nio-4.2.4.jar:lib/httpclient-4.2.5.jar:lib/bcpkix-jdk15on-147.jar:lib/bcprov-jdk15on-147.jar:lib/scpkix-jdk15on-1.47.0.2.jar:lib/scprov-jdk15on-1.47.0.2:lib/sc-light-jdk15on-1.47.0.2.jar:lib/commons-logging-1.1.1.jar
+
+# Implicit $(BUILD) rules
+.SUFFIXES: .class .java
+
+.java.class:
+	$(JAVAC) -d $(BIN) -cp $(CLASSPATH) "$<"
+
+# $(BUILD) targets
+all: bin $(BUILD) BigCertificateExample ClientExample1 ClientServerExample DiscoveryExample GenerateCertificateExample SampleClient.sh ServerExample1.sh
+
+$(BUILD):
+	@if test -f $(BUILD).xml && ! test -f $(BUILD)/$(UASTACK); then \
+	    $(ANT) -f $(BUILD).xml; \
+	fi
+
+bin:
+	$(MKDIR) $(BIN)
+
+BigCertificateExample: $(EXAMPLESPATH)/BigCertificateExample.class
+
+ClientExample1: $(EXAMPLESPATH)/ClientExample1.class
+
+ClientServerExample: $(EXAMPLESPATH)/ClientServerExample.class
+
+DiscoveryExample: $(EXAMPLESPATH)/DiscoveryExample.class
+
+GenerateCertificateExample: $(EXAMPLESPATH)/GenerateCertificateExample.class
+
+ServerExample1: $(EXAMPLESPATH)/ServerExample1.class
+
+SampleClient: $(EXAMPLESPATH)/SampleClient.class
+
+ServerExample1.sh: $(EXAMPLESPATH)/ServerExample1.class
+	echo "$(JAVA) -cp $(CLASSPATH):$(BIN) $(EXAMPLES_NS)/ServerExample1 \$$*" > $@ && chmod a+x $@
+
+SampleClient.sh: $(EXAMPLESPATH)/SampleClient.class
+	echo "$(JAVA) -cp $(CLASSPATH):$(BIN) $(EXAMPLES_NS)/SampleClient \$$*" > $@ && chmod a+x $@
+
+
+# remove all built targets
+clean:
+	$(RM) $(EXAMPLESBIN) $(BIN) ServerExample1.sh SampleClient.sh *.der *.pem
+	
+cleanall: clean
+	$(RM) $(BUILD) 
+

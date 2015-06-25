@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools" 
+xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#546fb4">
+     
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/opc_logo2" 
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"/>
+    
+    <com.beardedhen.androidbootstrap.BootstrapButton
+    android:id="@+id/connect"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:text="Connect"
+    bootstrapbutton:bb_size="large"
+    bootstrapbutton:bb_icon_left="fa-laptop"
+    bootstrapbutton:bb_type="default"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    bootstrapbutton:bb_roundedCorners="true"
+	/>
+    
+
+</RelativeLayout>

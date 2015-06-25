@@ -1,0 +1,32 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#000">
+
+    <ScrollView 
+    android:layout_width="wrap_content"
+    android:layout_height="200dp" 
+    android:id="@+id/scroll">
+    
+    <TextView
+        android:id="@+id/testo"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:text="" 
+        android:textColor="#FFFFFF"
+        />
+    
+    </ScrollView>
+
+    <ListView 
+        android:layout_below="@id/scroll"
+      android:layout_width="wrap_content"   
+      android:layout_height="fill_parent"   
+      android:id="@+id/listview"
+      android:listSelector="@drawable/list_selector"
+      >  
+    </ListView>
+    
+
+</RelativeLayout>

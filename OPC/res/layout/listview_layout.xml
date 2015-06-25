@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:padding="8dip" 
+   android:background="@drawable/list_selector"
+   >
+   
+    <com.beardedhen.androidbootstrap.FontAwesomeText
+    android:id="@+id/img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    fontawesometext:fa_icon="fa-laptop"
+    android:layout_margin="5dp" 
+    android:textSize="32sp"
+	android:layout_alignParentLeft="true"
+	android:layout_centerVertical="true"/>
+
+    <TextView
+       android:id="@+id/urltesto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:paddingTop="10dp"
+       android:textColor="#546fb4"
+       android:text="URL">
+    </TextView>
+    
+    <TextView
+       android:id="@+id/url"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:paddingBottom="10dp"
+       android:layout_below="@id/urltesto"
+       >
+    </TextView>
+    
+    <TextView
+       android:id="@+id/protocoltesto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:textColor="#546fb4"
+       android:text="Transport Protocol"
+       android:layout_below="@id/url" 
+       >
+    </TextView>
+    
+    <TextView
+       android:id="@+id/protocol"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:layout_below="@id/protocoltesto" 
+       android:paddingBottom="10dp">
+    </TextView>
+    
+    <TextView
+       android:id="@+id/leveltesto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:textColor="#546fb4"
+       android:text="Security Level"
+       android:layout_below="@id/protocol" 
+       >
+    </TextView>
+
+    <TextView
+       android:id="@+id/level"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/leveltesto" 
+       android:layout_toRightOf="@id/img"
+       android:textSize="11dp"
+       android:paddingBottom="10dp">
+    </TextView>
+    
+    <TextView
+       android:id="@+id/modetesto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:textColor="#546fb4"
+       android:text="Security Mode"
+       android:layout_below="@id/level" 
+       >
+    </TextView>
+    
+    <TextView
+       android:id="@+id/mode"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_toRightOf="@id/img"
+       android:layout_below="@id/modetesto" 
+       android:textSize="11dp"
+       android:paddingBottom="10dp">
+    </TextView>
+    
+    <TextView
+       android:id="@+id/policytesto"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="11dp"
+       android:layout_toRightOf="@id/img"
+       android:textColor="#546fb4"
+       android:text="Security Policy"
+       android:layout_below="@id/mode" 
+       >
+    </TextView>
+    
+    <TextView
+       android:id="@+id/policy"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_toRightOf="@id/img"
+       android:layout_below="@id/policytesto" 
+       android:textSize="11dp"
+       android:paddingBottom="10dp">
+    </TextView>
+
+</RelativeLayout>

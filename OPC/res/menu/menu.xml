@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
+        <item android:id="@+id/uno"
+              android:title="All Endpoint" />
+        <item android:id="@+id/due"
+              android:title="Filter by Transport Protocol (TCP)" />
+        <item android:id="@+id/tre"
+              android:title="Filter by Security Mode (None)" />
+    </group>
+    <item android:id="@+id/item1" 
+                android:icon="@drawable/exit" 
+                android:title="Exit"
+                android:visible="false"
+                android:showAsAction="never"
+                />
+    <item android:id="@+id/back" 
+                android:title="Return"
+                android:visible="false"
+                android:showAsAction="never"
+                />
+</menu>

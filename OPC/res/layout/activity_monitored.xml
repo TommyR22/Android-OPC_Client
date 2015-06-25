@@ -1,0 +1,201 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+     android:background="#000">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="50dp"
+        sothree:umanoShadowHeight="4dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="false">
+
+        <!-- MAIN CONTENT -->
+        <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#000">
+			            
+			            <LinearLayout
+					    android:id="@+id/LinearLayout2"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:paddingTop="1dp">  
+			            </LinearLayout>
+			                
+			            
+	<ListView 
+      android:layout_below="@+id/LinearLayout2"
+      android:layout_width="wrap_content"   
+      android:layout_height="fill_parent"   
+      android:id="@+id/listview_M"
+      android:listSelector="@drawable/list_selector"
+      >  
+    </ListView>
+        </RelativeLayout>
+
+        <!-- SLIDING LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#546fb4"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="false"
+            android:id="@+id/dragView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/name_m"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    />
+
+            </LinearLayout>
+            
+		            <LinearLayout
+					    android:id="@+id/LinearLayout1"
+					    android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:orientation="vertical" 
+					    android:gravity="center_horizontal">
+		
+		         
+		
+      <LinearLayout
+					    android:id="@+id/LinearLayouts1"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					     
+					    >
+			    
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_namespace_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="NameSpace" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>	
+			            <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_nodeid_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Node Id" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			            
+			            </LinearLayout>
+			            
+			            <LinearLayout
+					    android:id="@+id/LinearLayouts2"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayouts1">
+			           
+             <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_sampling_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Sampling Interval" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+             <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_queue_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Queue Size" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+			                </LinearLayout>
+			                
+			             <LinearLayout
+					    android:id="@+id/LinearLayouts3"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayouts2">
+			           
+             <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_discard_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Discard Oldest" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+                <com.beardedhen.androidbootstrap.BootstrapEditText
+			            android:id="@+id/input_deadband_M"
+			            android:layout_width="150dp"
+			            android:layout_height="wrap_content"
+			            android:layout_margin="10dp"
+			            android:hint="Deadband" 
+			            bootstrapbutton:be_roundedCorners="true"
+			            bootstrapbutton:be_state="primary"
+						/>
+                </LinearLayout>
+               <LinearLayout
+					    android:id="@+id/LinearLayouts4"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="horizontal" 
+					    android:gravity="center_horizontal"
+					    android:layout_below="@id/LinearLayouts3">
+			                 
+			                
+			                <com.beardedhen.androidbootstrap.BootstrapButton
+					    android:id="@+id/buttonMon_M"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Add Monitored Item"
+					    bootstrapbutton:bb_size="default"
+					    bootstrapbutton:bb_type="success"
+					    android:layout_centerHorizontal="true"
+					    bootstrapbutton:bb_roundedCorners="true"
+						android:paddingBottom="10dp"
+						/>
+			                </LinearLayout>
+			                
+               <View
+             android:layout_width="fill_parent"
+             android:layout_height="2dp"
+             android:background="#EDEDED"/>
+					</LinearLayout>
+            
+            
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+    
+
+</RelativeLayout>

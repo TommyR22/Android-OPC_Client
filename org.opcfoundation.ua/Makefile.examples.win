@@ -1,0 +1,70 @@
+# Makefile for building the JAVA examples in Windows
+
+# ENSURE THE STACK VERSION IS CORRECT!
+UASTACK=Opc.Ua.Stack-1.02.334.9.jar
+
+# Check the file paths, especially for JAVAC and ANT, unless they are on path
+
+JAVAC=javac
+JAVA=java
+ANT=ant
+
+# Sample paths (JDK 1.7.21 & Eclipse 4.2/ant1.8.3):
+#JAVAC="C:\Program Files\Java\jdk1.7.0_21\bin\javac"
+#ANT=c:\eclipse\plugins\org.apache.ant_1.8.3.v201301120609\bin\ant
+
+MKDIR=md
+RM=del /s /q /f
+
+EXAMPLESPATH=org\opcfoundation\ua\examples
+EXAMPLES_SRC=examples\$(EXAMPLESPATH)
+BIN=bin
+BUILD=build
+EXAMPLES_BIN=$(BIN)\$(EXAMPLESPATH)
+EXAMPLES_NS=org/opcfoundation/ua/examples
+
+# windows classpath
+CLASSPATH=examples;lib\$(UASTACK);$(BUILD)\$(UASTACK);lib\log4j-1.2.15.jar;lib\httpcore-4.2.4.jar;lib\httpcore-nio-4.2.4.jar;lib\httpclient-4.2.5.jar;lib\bcpkix-jdk15on-147.jar;lib\bcprov-jdk15on-147.jar;lib\scpkix-jdk15on-1.47.0.2.jar;lib\scprov-jdk15on-1.47.0.2;lib\sc-light-jdk15on-1.47.0.2.jar;lib/commons-logging-1.1.1.jar
+
+# Implicit $(BUILD) rules
+.SUFFIXES: .class .java
+
+.java.class:
+	$(JAVAC) -d $(BIN) -cp $(CLASSPATH) "$<"	
+
+# Build targets
+all: $(BUILD) bin BigCertificateExample ClientExample1 ClientServerExample DiscoveryExample GenerateCertificateExample SampleClient.bat ServerExample1.bat
+
+$(BUILD):
+    @if exist $(BUILD).xml if not exist $(BUILD)\$(UASTACK) $(ANT) -f $(BUILD).xml
+  
+bin:
+	@if not exist $(BIN) $(MKDIR) $(BIN)
+
+BigCertificateExample: $(EXAMPLES_SRC)\BigCertificateExample.class
+
+ClientExample1: $(EXAMPLES_SRC)\ClientExample1.class
+
+ClientServerExample: $(EXAMPLES_SRC)\ClientServerExample.class
+
+DiscoveryExample: $(EXAMPLES_SRC)\DiscoveryExample.class
+
+GenerateCertificateExample: $(EXAMPLES_SRC)\GenerateCertificateExample.class
+
+ServerExample1: $(EXAMPLES_SRC)\ServerExample1.class
+
+SampleClient: $(EXAMPLES_SRC)\SampleClient.class
+
+ServerExample1.bat: ServerExample1
+  echo $(JAVA) -cp $(CLASSPATH);$(BIN) $(EXAMPLES_NS)/ServerExample1 %1 %2 %3 > ServerExample1.bat
+
+SampleClient.bat: SampleClient
+  echo $(JAVA) -cp $(CLASSPATH);$(BIN) $(EXAMPLES_NS)/SampleClient %1 %2 %3 > SampleClient.bat
+
+# remove all built targets
+clean:
+	@for %i in ($(BIN) ServerExample1.bat SampleClient.bat *.der *.pem) do @if exist %i $(RM) %i
+	@if exist $(EXAMPLES_BIN) $(RM) $(EXAMPLES_BIN) 
+
+cleanall: clean
+	$(RM) $(BUILD)

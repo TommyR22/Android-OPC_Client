@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="unittests"/>
+	<classpathentry kind="src" path="examples"/>
+	<classpathentry kind="src" path="testharness"/>
+	<classpathentry kind="src" path="codegen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/commons-betwixt-0.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-core.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/bcpkix-jdk15on-147.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk15on-147.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-nio-4.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/sc-light-jdk15on-1.47.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/scpkix-jdk15on-1.47.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/scprov-jdk15on-1.47.0.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
