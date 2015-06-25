@@ -4,6 +4,8 @@ OPC Client based on Android using a Server on Windows.
 ###OPC
 This is the Android Client OPC created with Eclipse.
 
+[![Foo](http://i59.tinypic.com/z91u9.png)](https://play.google.com/store/apps/details?id=com.project.opc)
+
 
 ###AndroidBootstrap,AndroidSlidingUpPanel and appcompat
 These are libraries used in the Project.
